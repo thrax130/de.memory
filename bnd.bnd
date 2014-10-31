@@ -1,1 +1,11 @@
 Bundle-Version: 0.0.0.${tstamp}
+Private-Package:  \
+	de.memory
+Import-Package:  \
+	*
+-buildpath:  \
+	de.memory.api;version=latest,\
+	osgi.core,\
+	biz.aQute.bnd.annotation
+Service-Component:  \
+	*
