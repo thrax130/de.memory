@@ -90,9 +90,9 @@ public class Player implements IPlayer {
 			if(card.isFrontVisible()) //old card selected
 			{
 		//debug code remove @release
-				//selectedCards.remove(card);
-				//card.flipCard();
-				//nextState(new IdleState());
+				selectedCards.remove(card);
+				card.flipCard();
+				nextState(new IdleState());
 			}
 			else // new card selected
 			{
@@ -141,7 +141,7 @@ public class Player implements IPlayer {
 					card.flipCard();
 					nextState(new WaitForCleanup());
 				} else { // 1 card open
-					selectedCards.clear();
+					selectedCards.remove(card);
 					card.flipCard();
 					switchPlayer();//change player
 				}
